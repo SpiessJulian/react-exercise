@@ -1,3 +1,7 @@
+### `npm install`
+
+To initialize the project, its necesary to run this command to install the uuid dependency.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

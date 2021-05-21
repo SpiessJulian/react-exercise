@@ -1,27 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ArticleRow from './ArticleRow';
 
-const ArticlesView = ({ articles, setArticles }) => {
+const ArticlesView = ({ articles, setArticles, setArticleSelected }) => {
 
-    const [ articleSelected, setArticleSelected] = useState({});
 
     const onDelete = (articleToDelete) => {
         const newArticles = articles.filter(eachArticle => eachArticle.id !== articleToDelete.id);
         setArticles(newArticles);
     }
 
-    /* Edit the corresponding article on the list*/
-    const onEdit = () => {
-        const newArticles = articles.map(eachArticle => {
-            if(eachArticle.id === articleSelected.id) {
-                return articleSelected;
-            }else{
-                return eachArticle;
-            }
-        });
-        setArticles(newArticles);
-        setArticleSelected({});
-    }
 
     return ( 
         <div className="articlesView">
@@ -36,11 +23,10 @@ const ArticlesView = ({ articles, setArticles }) => {
                     {
                         articles.map(eachArticle => {
                             return (
-                                <ArticleRow 
-                                    articleSelected={articleSelected} 
+                                <ArticleRow
+                                    key={eachArticle.id}
                                     setArticleSelected={setArticleSelected}
                                     currentArticle={eachArticle}
-                                    onEdit={onEdit}
                                     onDelete={onDelete}
                                 /> 
                             )

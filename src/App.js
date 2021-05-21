@@ -9,7 +9,7 @@ const App = () => {
 
   return (
     <div className="mainContainer">
-      <h1 className="mainTitle">DevLights Excercice</h1>
+      <h1 className="mainTitle">DevLights Exercice</h1>
       <ArticlesForm articles={articles} setArticles={setArticles} articleSelected={articleSelected} setArticleSelected={setArticleSelected} />
       <ArticlesView articles={articles} setArticles={setArticles}  setArticleSelected={setArticleSelected}/>
     </div>

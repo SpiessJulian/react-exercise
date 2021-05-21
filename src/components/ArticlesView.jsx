@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ArticleRow from './ArticleRow';
 
 const ArticlesView = ({ articles, setArticles, setArticleSelected }) => {
@@ -23,7 +23,8 @@ const ArticlesView = ({ articles, setArticles, setArticleSelected }) => {
                     {
                         articles.map(eachArticle => {
                             return (
-                                <ArticleRow 
+                                <ArticleRow
+                                    key={eachArticle.id}
                                     setArticleSelected={setArticleSelected}
                                     currentArticle={eachArticle}
                                     onDelete={onDelete}

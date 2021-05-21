@@ -2,7 +2,7 @@ import React from 'react';
 
 const ArticleRow = ({ setArticleSelected, currentArticle, onDelete }) => {
     return (  
-        <tr key={currentArticle.id} className="articleRow">
+        <tr className="articleRow">
             <td className="articlesTitle">
                 <h3>{currentArticle.title}</h3>
             </td>
